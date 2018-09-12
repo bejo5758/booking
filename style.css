@@ -10,6 +10,22 @@ body {
     right: 0px;
 }
 
+.ct-btn-scroll {
+    width: 20px;
+    height: auto;
+    position: relative;
+    float:center;
+    bottom: 300px;
+    left: 50%;
+    right: 0;
+    margin: auto;
+    padding-top: 500px;
+    z-index: 9;
+    border-radius: 50%;
+    -webkit-transition: background-color 0.25s ease-in-out;
+    transition: background-color 0.25s ease-in-out;
+}
+
 .middleHeader h1{
     font-family: "Cursive";
     font-size: 45;
@@ -17,11 +33,7 @@ body {
     color: darkblue;
 
 }
-.collapse.in{
-    font-weight: bold;
-    font-size:20px;
-    color:red;
-}
+
 
 .middleHeader{
     text-align: center;
@@ -79,7 +91,7 @@ body {
     padding:20px;
     text-align: center;
     border: black;
-    width:65%;
+    width:68%;
     position:relative;
 }
 

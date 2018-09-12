@@ -17,6 +17,9 @@
 <div class="slideshow" id="top">
     <img class = "mySlides" src="jpg/FD.jpg">
     <img class = "mySlides"  src="jpg/FD2.jpg">
+    <a class="ct-btn-scroll ct-js-btn-scroll" href="#bottoms">
+        <img alt="Arrow Down Icon"
+             src="jpg/icon.png"></a>
 </div>
 
 
@@ -41,8 +44,8 @@
         <button type="button" class="buttons-info" data-toggle="collapse" data-target="#demo" id="buttons">
             Contact Us</button>
         <button id = "myBtn" class="buttons" type="button"> Book Now </button>
-        <div id="demo" class="collapse">
-            Contact us:<br/>
+        <div id="demo" class="collapse" style="font-size: 25px; color:red;">
+            <br/>Contact us:<br/>
             support@example.com <br/>
             +91283249
         </div>
@@ -54,7 +57,7 @@
 <div id = "myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <form onsubmit="sayThanks()" action="#bottoms" id="forms">
+        <form onsubmit="sayThanks();this.reset()" action="#bottoms" id="forms">
             <div>
                 <label for="start">Date & Time:</label> <br/>
                 <input type="date" id="start" min="2018-09-11" max="2018-12-31" required>
