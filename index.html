@@ -14,19 +14,19 @@
 
 <body>
 
-<div class="slideshow" id="top">
+<div class="slideshow">
     <img class = "mySlides" src="jpg/FD.jpg">
     <img class = "mySlides"  src="jpg/FD2.jpg">
-    <a class="ct-btn-scroll ct-js-btn-scroll" href="#bottoms">
+    <a class="ct-btn-scroll ct-js-btn-scroll" href="#middle">
+        <h1> Bermuda </h1>
         <img alt="Arrow Down Icon"
              src="jpg/icon.png"></a>
 </div>
 
-
-<div class="middleHeader">
+<div class="middleHeader" id="middle">
     <h1>Bermuda Dining</h1>
-
-    <p> We have created a fictional restaurant website. Lorem ipsum
+    <br/>
+    <p> A fictional restaurant website. Lorem ipsum
         dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -36,18 +36,56 @@
         sint occaecat cupidatat non proident, sunt in culpa qui
         officia deserunt mollit anim id est laborum consectetur
         adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. </p>
+        labore et dolore magna aliqua.<br/><br/>
+        Note: All images use in this page are taken from google image.
+    </p>
+    <br/>
+    <button class="buttonz" type="button" onclick=" window.open('http://google.com','_blank')"> Our Menu </button>
+    <a class="ct-btn-scrolls ct-js-btn-scroll" href="#carousel-review">
+        <img alt="Arrow Down Icon"
+             src="jpg/down.png" style="max-width: 50px"></a>
 </div>
+
+<div id="carousel-review" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-review" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-review" data-slide-to="1"></li>
+        <li data-target="#carousel-review" data-slide-to="2"></li>
+    </ol>
+
+    <h1> Awards and Achievements </h1>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="jpg/review1.png" /></a>
+        </div>
+        <div class="item">
+            <img src="jpg/review.jpg" /></a>
+        </div>
+        <div class="item">
+            <img src="jpg/review2.jpg" /></a>
+        </div>
+    </div>
+
+    <a class="left carousel-control" href="#carousel-review" data-slide="prev">
+    </a>
+    <a class="right carousel-control" href="#carousel-review" data-slide="next">
+    </a>
+</div>
+<a class="ct-btn-scrol ct-js-btn-scroll" href="#bottoms">
+    <img alt="Arrow Down Icon"
+         src="jpg/down.png" style="max-width: 50px"></a>
+<br/>
+
 
 <div class ="bottomHeader" id="bottoms">
     <div class="container">
         <button type="button" class="buttons-info" data-toggle="collapse" data-target="#demo" id="buttons">
             Contact Us</button>
         <button id = "myBtn" class="buttons" type="button"> Book Now </button>
-        <div id="demo" class="collapse" style="font-size: 25px; color:red;">
-            <br/>Contact us:<br/>
-            support@example.com <br/>
-            +91283249
+        <div id="demo" class="collapse" style="font-size: 15pt;color: darkred; font-family: monospace;">
+            <br/><img src = "jpg/icons.png"> Open hr: 5pm-9pm
+            <br/><img src="jpg/mail.png"> support@example.com
+            <br/><img src="jpg/phone.png"> +91283249
         </div>
     </div>
 
@@ -56,11 +94,11 @@
 
 <div id = "myModal" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
-        <form onsubmit="sayThanks();this.reset()" action="#bottoms" id="forms">
+        <span class="close">x</span>
+        <form onsubmit="sayThanks();this.reset();return false" id="forms">
             <div>
                 <label for="start">Date & Time:</label> <br/>
-                <input type="date" id="start" min="2018-09-11" max="2018-12-31" required>
+                <input type="date" id="start" min="2018-09-15" max="2018-12-31" required>
                 <select id="ddb">
                     <option>5pm</option>
                     <option>6pm</option>
