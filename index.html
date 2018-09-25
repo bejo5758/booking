@@ -35,10 +35,10 @@
         Note: All images use in this page are taken from google image.
     </p>
     <br/>
-    <button class="buttonz" type="button" onclick=" window.open('http://google.com','_blank')"> Our Menu </button>
-    <a class="ct-btn-scrolls ct-js-btn-scroll" href="#carousel-review">
-        <img alt="Arrow Down Icon"
-             src="jpg/down.png" style="max-width: 50px"></a>
+    <button class="buttonz" type="button" id="buttonss"> Our Menu </button>
+    <a class="ct-js-btn-scroll" href="#carousel-review">
+        <img alt="Arrow Down Icon" class="ct-btn-scrolls "
+             src="jpg/down.png"></a>
 </div>
 
 <div id="carousel-review" class="carousel slide" data-ride="carousel">
@@ -66,9 +66,9 @@
     <a class="right carousel-control" href="#carousel-review" data-slide="next">
     </a>
 </div>
-<a class="ct-btn-scrol ct-js-btn-scroll" href="#bottoms">
-    <img alt="Arrow Down Icon"
-         src="jpg/down.png" style="max-width: 50px"></a>
+<a class="ct-js-btn-scroll" href="#bottoms">
+    <img alt="Arrow Down Icon" class="ct-btn-scrol"
+         src="jpg/down.png"></a>
 <br/>
 
 
@@ -77,7 +77,7 @@
         <button type="button" class="buttons-info" data-toggle="collapse" data-target="#demo" id="buttons">
             Contact Us</button>
         <button id = "myBtn" class="buttons" type="button"> Book Now </button>
-        <div id="demo" class="collapse" style="font-size: 15pt;color: darkred; font-family: monospace;">
+        <div id="demo" class="collapse">
             <br/><img src = "jpg/icons.png"> Open hr: 5pm-9pm
             <br/><img src="jpg/mail.png"> support@example.com
             <br/><img src="jpg/phone.png"> +91283249
@@ -90,10 +90,10 @@
 <div id = "myModal" class="modal">
     <div class="modal-content">
         <span class="close">x</span>
-        <form onsubmit="sayThanks();this.reset();return false" id="forms">
+        <form onsubmit="sayThanks()" id="forms">
             <div>
                 <label for="start">Date & Time:</label> <br/>
-                <input type="date" id="start" min="2018-09-15" max="2018-12-31" required>
+                <input type="date" id="start" min="2018-09-25" max="2018-12-31" required>
                 <select id="ddb">
                     <option>5pm</option>
                     <option>6pm</option>
@@ -106,7 +106,7 @@
             Phone: <br/><input type="text" required> <br/>
             Number of people: <br/><input type="text" id="noPeeps" required> <br/>
             <br/><input type="submit" value="Submit">
-        <br/><p id="demos"></p>
+            <br/><p id="demos"></p>
         </form>
     </div>
 
@@ -117,5 +117,3 @@
 </body>
 
 </html>
-
-

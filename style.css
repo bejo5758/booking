@@ -19,20 +19,20 @@ body {
 }
 
 .ct-btn-scroll {
-     width: 20px;
-     height: auto;
-     position: relative;
-     bottom: 500px;
-     left: 50%;
-     right: 0;
-     margin: auto;
-     z-index: 9;
-     border-radius: 50%;
+    width: 20px;
+    height: auto;
+    position: relative;
+    bottom: 500px;
+    left: 50%;
+    right: 0;
+    margin: auto;
+    z-index: 9;
+    border-radius: 50%;
     align-items: center;
     justify-content: center;
-     -webkit-transition: background-color 0.25s ease-in-out;
-     transition: background-color 0.25s ease-in-out;
- }
+    -webkit-transition: background-color 0.25s ease-in-out;
+    transition: background-color 0.25s ease-in-out;
+}
 
 .ct-btn-scrolls {
     position:relative;
@@ -42,6 +42,8 @@ body {
     -webkit-transition: background-color 0.25s ease-in-out;
     transition: background-color 0.25s ease-in-out;
     bottom: -200pt;
+    max-width: 50px;
+    left:48%;
 }
 
 .middleHeader h1{
@@ -102,10 +104,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    -webkit-transition: background-color 0.25s ease-in-out;
     transition: background-color 0.25s ease-in-out;
+    -webkit-transition: background-color 0.25s ease-in-out;
     bottom:20px;
+    max-width: 50px;
+    left:48%;
 }
+
+
 
 .bottomHeader{
     padding: 320px;
@@ -229,7 +235,7 @@ input[type=submit] {
     background-color: darkred;
     color: white;
     padding: 5px 10px;
-    border: none;
+    border: hidden;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -273,4 +279,3 @@ label {
 .navigator{
     float: right;
 }
-

@@ -1,22 +1,23 @@
-
+// ---------------------- Carousel -------------------------
 var slideIndex = 0;
 carousel();
 
 function carousel(){
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i=0; i<x.length; i++){
-        x[i].style.display = "none";
+    const x = document.getElementsByClassName('mySlides');
+    for (var i=0; i<x.length; i++){
+        x[i].style.display = 'none';
     }
     slideIndex++;
-    if(slideIndex > x.length) {slideIndex = 1}
-    x[slideIndex-1].style.display = "block";
-    setTimeout(carousel,2000);
+    if(slideIndex > x.length) {
+        slideIndex = 1;
+    }
+    x[slideIndex-1].style.display = 'block';
+    setTimeout(carousel,2000); // recursion?
 }
 
 $(document).ready(function(){
-    $("a").on('click', function(event) {
-        if (this.hash !== "") {
+    $('a').on('click', function(event) {
+        if (this.hash !== '') {
             event.preventDefault();
             var hash = this.hash;
             $('html, body').animate({
@@ -28,57 +29,59 @@ $(document).ready(function(){
     });
 });
 
-
 $(document).ready(function(){
     // Activate Carousel
-    $("#myCarousel").carousel({interval: 500});
+    $('#myCarousel').carousel({interval: 500});
 
     // Enable Carousel Indicators
-    $(".item1").click(function(){
-        $("#myCarousel").carousel(0);
-    });
-    $(".item2").click(function(){
-        $("#myCarousel").carousel(1);
-    });
-    $(".item3").click(function(){
-        $("#myCarousel").carousel(2);
-    });
-    $(".item4").click(function(){
-        $("#myCarousel").carousel(3);
-    });
+    clickCarousel('.item1', '#myCarousel', 0);
+    clickCarousel('.item2', '#myCarousel', 1);
+    clickCarousel('.item3', '#myCarousel', 2);
+    clickCarousel('.item4', '#myCarousel', 3);
 
     // Enable Carousel Controls
-    $(".left").click(function(){
-        $("#myCarousel").carousel("prev");
-    });
-    $(".right").click(function(){
-        $("#myCarousel").carousel("next");
-    });
+    clickCarousel('.left', '#myCarousel', 'prev');
+    clickCarousel('.right', '#myCarousel', 'next');
+
+    function clickCarousel(firstId, secondId, carouselValue) {
+        $(firstId).click(function() {
+            $(secondId).carousel(carouselValue);
+        });
+    }
 });
+// ---------------------- Carousel -------------------------
 
-
+// ---------------------- Modal -------------------------
 var modal = document.getElementById('myModal');
 var btn = document.getElementById('myBtn');
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-span.onclick = function(){
-    modal.style.display = "none";
-}
-window.onclick = function(event){
-    if (event.target == modal){
-        modal.style.display = "none";
-    }
-}
+var span = document.getElementsByClassName('close')[0];
+var clicks = document.getElementById('buttonss');
+
+btn.addEventListener('click', function () {
+    modal.style.display = 'block';
+});
+
+span.addEventListener('click', function(){
+    modal.style.display = 'hidden';
+});
+
+window.addEventListener('click',function(){
+});
+
+clicks.addEventListener('click', function(){
+    window.open('http://google.com');
+});
 
 function sayThanks() {
-    x = document.getElementById("noPeeps").value;
-    if ( x > 0) {
-        text = "<br/> Thank you, the confirmation email has been sent to your inbox!";
+    const theText = document.getElementById('noPeeps').value;
+    if ( theText > 0) {
+        text = '<br/> Thank you, the confirmation email has been sent to your inbox!';
+
     } else {
-        text = "<br/> Please insert at least 1 person";
+        text = '<br/> Please insert at least 1 person';
     }
-    document.getElementById("demos").innerHTML=text;
+    document.getElementById('demos').innerHTML=text;
+    return false;
 
 }
+// ---------------------- Modal -------------------------
