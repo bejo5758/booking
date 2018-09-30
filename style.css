@@ -42,8 +42,6 @@ body {
     -webkit-transition: background-color 0.25s ease-in-out;
     transition: background-color 0.25s ease-in-out;
     bottom: -200pt;
-    max-width: 50px;
-    left:48%;
 }
 
 .middleHeader h1{
@@ -104,14 +102,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.25s ease-in-out;
     -webkit-transition: background-color 0.25s ease-in-out;
+    transition: background-color 0.25s ease-in-out;
     bottom:20px;
-    max-width: 50px;
-    left:48%;
 }
-
-
 
 .bottomHeader{
     padding: 320px;
@@ -167,8 +161,11 @@ body {
     width:100%;
     height:100%;
     overflow:auto;
-    background-color: transparent;
     background-color: rgba(0,0,0,0.4);
+}
+
+.modal.visible{
+    display:block;
 }
 
 .modal-content{
