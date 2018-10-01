@@ -1,4 +1,5 @@
 // ---------------------- Modal -------------------------
+(function() {
 var modal = document.getElementById('myModal');
 var btn = document.getElementById('myBtn');
 var close = document.getElementsByClassName('close')[0];
@@ -33,4 +34,5 @@ function sayThanks() {
     return false;
 
 }
+})();
 // ---------------------- Modal -------------------------/**

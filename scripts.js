@@ -1,51 +1,57 @@
 // ---------------------- Carousel -------------------------
-var slideIndex = 0;
-carousel();
+(function() {
+    var slideIndex = 0;
+    carousel();
 
-function carousel(){
-    const slides = document.getElementsByClassName("mySlides");
-    for (var i=0; i<slides.length; i++){
-        slides[i].style.display = "none";
+    function carousel(){
+        const x = document.getElementsByClassName('mySlides');
+        if (x[slideIndex]) {
+            const slideLength = x.length;
+            for (var i = 0; i < slideLength; i++){
+                x[i].style.display = 'none';
+            }
+
+            slideIndex += 1;
+            if(slideIndex >= slideLength) {
+                slideIndex = 0;
+            }
+            x[slideIndex].style.display = 'block';
+            setTimeout(carousel,2000); // recursion?
+        }
     }
-    slideIndex++;
-    if(slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(carousel,2000);
-}
 
-$(document).ready(function(){
-    $("a").on('click', function(event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function(){
-                window.location.hash = hash;
+    let anchorlinks = document.querySelectorAll('a[href^="#"]')
+
+    for (let item of anchorlinks) { // relitere
+        item.addEventListener('click', (e)=> {
+            let hashval = item.getAttribute('href')
+            let target = document.querySelector(hashval)
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+            history.pushState(null, null, hashval)
+            e.preventDefault()
+        })
+    };
+
+
+    $(document).ready(function(){
+        // Activate Carousel
+        $("#myCarousel").carousel({interval: 500});
+
+        for (var i=0; i<4; i++){
+            clickCarousel(`item${i+1}`, '#myCarousel', i);
+        }
+
+        // Enable Carousel Controls
+        clickCarousel('.left', '#myCarousel', 'prev');
+        clickCarousel('.right', '#myCarousel', 'next');
+
+        function clickCarousel(firstId, secondId, carouselValue) {
+            $(firstId).click(function() {
+                $(secondId).carousel(carouselValue);
             });
         }
     });
-});
-
-
-$(document).ready(function(){
-    // Activate Carousel
-    $("#myCarousel").carousel({interval: 500});
-
-    for (var i=0; i<4; i++){
-        clickCarousel(`item${i+1}`, '#myCarousel', i);
-    }
-
-    // Enable Carousel Controls
-    clickCarousel('.left', '#myCarousel', 'prev');
-    clickCarousel('.right', '#myCarousel', 'next');
-
-    function clickCarousel(firstId, secondId, carouselValue) {
-        $(firstId).click(function() {
-            $(secondId).carousel(carouselValue);
-        });
-    }
-});
-
-// ---------------------- Carousel -------------------------
-
+})();
